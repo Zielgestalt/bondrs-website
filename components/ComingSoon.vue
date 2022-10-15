@@ -16,9 +16,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: lightgray;
+    background-color: rgb(115, 115, 115);
     font-family: 'Montserrat', sans-serif;
-    color: #082432;
+    color: #ffffff;
 
     h1 {
       font-weight: 900;

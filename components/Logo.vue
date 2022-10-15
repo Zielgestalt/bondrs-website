@@ -11,7 +11,7 @@
       </stop> -->
 
       <stop offset="50%" stop-color="#733289">
-        <animate attributeName="stop-color" values="#733289; #009ee2; #733289" dur="10s" repeatCount="indefinite"></animate>
+        <animate attributeName="stop-color" values="#733289; #009ee2; #e5007e; #733289" dur="20s" repeatCount="indefinite"></animate>
       </stop>
 
       <stop offset="1" stop-color="#e5007e"/>
@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
   @keyframes pulse {
    0% { transform: scale(1); }
-   50% { transform: scale(1.07); }
+   50% { transform: scale(1.1); }
    100% { transform: scale(1); } 
   }
 
