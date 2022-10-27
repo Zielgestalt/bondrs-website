@@ -1,0 +1,82 @@
+body {
+  color: var(--color);
+  background: var(--bg);
+  font-family: var(--font-family);
+  font-weight: var(--fw-3);
+  font-size: var(--fs-2);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  font-weight: inherit;
+}
+
+// Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-headline);
+  color: var(--heading);
+}
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+  line-height: 1;
+  color: var(--heading);
+  font-family: var(--ff-headline);
+}
+
+.heading-1 {
+  font-size: var(--fsf-3);
+  font-weight: var(--fw-9);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.heading-2 {
+  font-weight: var(--fw-9);
+  font-size: var(--fsf-2);
+}
+
+.heading-3 {
+  font-size: var(--fsf-1);
+}
+
+.heading-4 {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-7);
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+}
+
+
+// Basic Styles
+
+p {
+  color: var(--color);
+}
+
+a:not(.button):not([role="button"]) {
+  color: var(--link);
+
+  &:hover {
+    color: var(--link-hover);
+  }
+}
+
+strong {
+  font-weight: var(--heading-fw);
+}

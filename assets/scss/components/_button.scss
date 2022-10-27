@@ -1,0 +1,134 @@
+/// Standard
+button {
+  margin: 0; // 2
+  overflow: visible; // 3
+  font-family: inherit; // 1
+  text-transform: none; // 1
+}
+
+// Correct the inability to style clickable types in iOS and Safari
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+// Remove the inner border and padding in Firefox
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+
+// Override
+
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+[role="button"] {
+  --button-border-radius: 5rem;
+  --button-bg: var(--link);
+  --button-bg-hover: var(--link-hover);
+  --button-text: var(--link-inverse);
+
+  --fw: var(--fw-7);
+  // --b-bg: var(--button-bg);
+  // --b-t: var(--button-text);
+
+  font-family: var(--ff-headline);
+
+  padding: var(--size-3) var(--size-9);
+  color: var(--button-text);
+  // font-weight: var(--fw-7);
+  background: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  border-radius: var(--button-border-radius);
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color var(--transition),
+      border-color var(--transition), color var(--transition);
+  
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--button-bg-hover);
+    text-decoration: none;
+  }
+
+  &.outline {
+    --button-bg: var(--link-inverse);
+    background: transparent;
+  }
+
+  &.has-icon {
+    padding-left: calc(var(--size-7) + 2.5rem);
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: calc(var(--size-7) + 0.25rem);
+      top: 50%;
+      transform: translate(-0.25rem, -50%);
+      width: 1.75em;
+      height: 1.75em;
+      color: inherit;
+      transition: transform var(--transition);
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      svg {
+        transform: translate(0, -50%);
+      } 
+    }
+  }
+
+  &.is-gradient {
+    position: relative;
+    background-color: var(--clr-primary);
+    background: var(--gradient-primary-double);
+    background-size: 200%;
+    background-position: 0%;
+    border: none;
+
+    color: var(--clr-light);
+    transition: background-position 3s;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -0.25rem;
+      left: -0.25rem;
+      bottom: -0.25rem;
+      right: -0.25rem;
+      z-index: -1;
+      background: var(--gradient-primary-double);
+      background-size: 400%;
+      background-position: 0%;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    &:hover,
+    &.is-active {
+      background-position: 100%;
+      text-decoration: none;
+
+      &::before {
+        filter: blur(1.5rem);
+        opacity: 0.4;
+        background-position: 100%;
+      }
+    }
+  }
+}

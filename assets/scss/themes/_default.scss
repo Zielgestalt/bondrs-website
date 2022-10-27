@@ -1,0 +1,47 @@
+body {
+  --color: var(--clr-dark);
+  --bg: var(--clr-white);
+  --bg-2: var(--clr-grey-1);
+  --link: var(--clr-primary);
+  --link-hover: var(--clr-primary-hover);
+  --link-inverse: var(--clr-white);
+  
+  --font-family: var(--ff-regular);
+  --fw: var(--fw-3);
+
+  --heading: var(--clr-dark);
+  --heading-fw: var(--fw-9);
+
+  --box-shadow: 0px 20px 53px -30px rgb(95 102 173 / 57%);
+}
+
+[data-theme] {
+  color: var(--color);
+  background-color: var(--bg);
+}
+
+// // Dark theme (Auto)
+// // Automatically enabled if user has Dark mode enabled
+@import "./dark";
+
+// @media only screen and (prefers-color-scheme: dark) {
+//   body:not([data-theme="light"]) {
+//     @include dark;
+//   }
+// }
+
+// // Dark theme (Forced)
+// // Enabled if forced with data-theme="dark"
+[data-theme="dark"] {
+  @include dark;
+}
+
+@import "./bear";
+[data-theme="bear"] {
+  @include bear;
+}
+
+// @import "./gold";
+// [data-theme="gold"] {
+//   @include gold;
+// }

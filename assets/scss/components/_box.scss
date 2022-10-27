@@ -1,0 +1,29 @@
+.box {
+  // --bg: var(--clr-light);
+  // --color: var(--clr-dark);
+  // --heading: var(--clr-dark);
+  padding: 2rem;
+  // background: var(--clr-light);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(1.5rem);
+
+  &[data-theme="dark"] {
+    // background: var(--clr-dark);
+  }
+
+  &.large {
+    padding: 4rem;
+
+    .grid-2 {
+      gap: 8rem;
+    }
+  }
+
+  &.glass {
+    // background: linear-gradient(rgba(6, 36, 49, 0.5), rgba(0, 144, 223, 0.1) 80%, rgba(0, 144, 223, 0));
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(1.5rem);
+  }
+}

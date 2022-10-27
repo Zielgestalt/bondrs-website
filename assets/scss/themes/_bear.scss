@@ -1,0 +1,15 @@
+@mixin bear {
+  --link: var(--clr-secondary);
+  --link-hover: var(--clr-secondary-hover);
+
+  --button-bg: var(--clr-secondary);
+  --button-bg-hover: var(--clr-secondary-hover);
+  // Document
+  // color-scheme: dark;
+
+  // --link: #89cbc4;
+  // --color: var(--clr-light);
+  // --heading: var(--clr-light);
+  // --bg: #1d294b;
+  // --heading: var(--clr-light);
+}

@@ -1,0 +1,123 @@
+// Grids
+
+.grid-2 {
+  display: grid;
+  gap: var(--size-9);
+  grid-template-columns: 1fr;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--size-9);
+  grid-template-columns: 1fr;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+.grid-4 {
+  display: grid;
+  gap: var(--size-9);
+  grid-template-columns: 1fr;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+.grid-2-3 {
+  display: grid;
+  gap: var(--size-9);
+  grid-template-columns: 1fr;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+}
+
+.grid-3-2 {
+  display: grid;
+  gap: var(--size-9);
+  grid-template-columns: 1fr;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+}
+
+.grid-process {
+  display: grid;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+    }
+  }
+
+  p {
+    font-size: var(--fs-medium);
+    font-weight: var(--heading-fw);
+  }
+
+  .count {
+    font-family: var(--ff-headline);
+    font-size: 4rem;
+    font-weight: var(--heading-fw);
+    line-height: 5rem;
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid var(--link);
+    display: block;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto 1rem;
+  }
+
+  .process-item {
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  svg {
+    display: none;
+
+    @if map-get($breakpoints, "lg") {
+      @media (min-width: map-get($breakpoints, "lg")) {
+        display: block;
+        color: var(--link);
+        width: 100%;
+      }
+    }
+    
+  }
+}
+
+.grid-heading-left {
+  display: grid;
+  gap: var(--size-9);
+  grid-template-columns: 1fr;
+
+  .section-heading {
+    text-align: left;
+  }
+
+  @media (min-width: "600px") {
+    grid-template-columns: 1fr 3fr;
+  }
+}

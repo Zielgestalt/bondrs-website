@@ -1,0 +1,32 @@
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: square;
+  padding-left: 2rem;
+
+  ::marker {
+    color: var(--link);
+    // font-size: 1.5em;
+  }
+}
+
+.iconlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    padding-left: 4rem;
+    // padding-top: 0.5rem;
+    position: relative;
+  }
+
+  .signetitem {
+    position: absolute;
+    left: 0;
+    top: 0rem;
+    width: 3rem;
+    color: var(--link);
+    // color: rgba($primary, 0.075);
+  }
+}

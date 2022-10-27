@@ -1,0 +1,119 @@
+:where(section) {
+  background: var(--bg);
+  padding: var(--size-8) var(--size-5);
+  position: relative;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      padding: var(--size-11) var(--size-5);
+    }
+  }
+
+  &.has-overlap-top {
+    padding-top: 0;
+
+    > .container {
+      transform: translateY(-5rem);
+    }
+  }
+
+  &.has-decoration {
+    &::before {
+      content: '';
+      width: 4rem;
+      height: 4px;
+      background-color: var(--clr-dark);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &[data-theme="dark"] {
+    margin-block: 10rem;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 56rem;
+      background: var(--gradient-bg);
+    }
+
+    &::before {
+      bottom: 100%;
+      transform: scaleY(-1);
+    }
+    &::after {
+      top: 100%;
+    }
+  }
+}
+
+// :where(section):nth-child(even) {
+//   --bg: var(--bg-2);
+// }
+
+.section-heading {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .heading-2 {
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: var(--ff-headline);
+  }
+
+  p:not(.overline) {
+    margin-top: var(--size-5);
+    // font-size: var(--fs-3);
+  }
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      text-align: center;
+    }
+  }
+
+  .overline {
+    color: var(--link);
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    font-size: .875rem;
+  
+    &:after {
+      content: "";
+      position: absolute;
+      right: -1rem;
+      width: 4rem;
+      height: 1px;
+      display: block;
+      top: 50%;
+      background: currentColor;
+      transform: translate(100%,-50%);
+    }
+  }
+}
+
+.section-decoration {
+  position: absolute;
+  width: 33%;
+  // height: 100%;
+  opacity: 0.1;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.left {
+    left: -2rem;
+  }
+
+  &.right {
+    right: -2rem;
+  }
+}

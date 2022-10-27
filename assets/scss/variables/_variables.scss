@@ -1,0 +1,133 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+);
+
+// Viewports
+$viewports: (
+  // 'null' disable the viewport on a breakpoint
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1130px,
+  xxl: 1496px,
+);
+
+$navbar-breakpoint: 1200px;
+
+:root {
+  --clr-primary: hsl(329, 97%, 41%);
+  --clr-primary-hover: hsl(329, 97%, 21%);
+  --clr-primary-focus: hsl(329, 97%, 21%);
+  --clr-primary-inverse: white;
+
+  --clr-secondary: hsl(198, 100%, 45%);
+  --clr-secondary-hover: hsl(198, 100%, 25%);
+  --clr-secondary-focus: hsl(198, 100%, 25%);
+  --clr-secondary-inverse: white;
+
+  --clr-dark: hsl(200, 72%, 11%);
+  --clr-dark-hover: hsl(200, 72%, 21%);
+  --clr-dark-focus: hsl(200, 72%, 21%);
+  --clr-dark-inverse: hsl(0, 0%, 100%);
+
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-light-hover: hsl(0, 0%, 90%);
+  --clr-light-focus: hsl(0, 0%, 90%);
+  --clr-light-inverse: hsl(200, 72%, 11%);
+
+  --clr-grey-0: hsl(0, 0%, 95%);
+  --clr-grey-1: hsl(0, 0%, 85%);
+  --clr-grey-2: hsl(0, 0%, 75%);
+  --clr-grey-3: hsl(0, 0%, 65%);
+  --clr-grey-4: hsl(0, 0%, 55%);
+  --clr-grey-5: hsl(0, 0%, 45%);
+  --clr-grey-6: hsl(0, 0%, 35%);
+  --clr-grey-7: hsl(0, 0%, 25%);
+  --clr-grey-8: hsl(0, 0%, 15%);
+  --clr-grey-9: hsl(0, 0%, 5%);
+
+  // Gradients
+
+  --gradient-bg: linear-gradient(rgba(6, 36, 49, 1), rgba(0, 144, 223, 0.3) 40%, rgba(0, 144, 223, 0));
+  --gradient-primary: linear-gradient(90deg, rgba(0, 144, 223, 1), rgba(78, 37, 121, 1), rgba(216, 0, 107, 1));
+  --gradient-primary-double: linear-gradient(90deg, rgba(0, 144, 223, 1), rgba(78, 37, 121, 1), rgba(216, 0, 107, 1), rgba(78, 37, 121, 1), rgba(0, 144, 223, 1));
+
+  // Font Sizes
+  --fs-0: 0.5rem;
+  --fs-1: 0.75rem;
+  --fs-2: 1rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.5rem;
+  --fs-5: 2rem;
+  --fs-6: 2.5rem;
+  --fs-7: 3rem;
+  --fs-8: 3.5rem;
+
+  --fsf-0: clamp(.75rem, 1.5vw, 1rem);
+  --fsf-1: clamp(1rem, 2vw, 1.75rem);
+  --fsf-2: clamp(2.25rem, 3vw, 2.25rem);
+  --fsf-3: clamp(2rem, 5vw, 3.625rem);
+
+  --fw-1: 100;
+  --fw-2: 200;
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
+  --fw-8: 800;
+  --fw-9: 900;
+
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --font-serif: ui-serif, serif;
+  --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+
+  --ff-regular: "Lato", sans-serif;
+  --ff-headline: "Montserrat", sans-serif;
+
+  --lh-0: 1.1;
+  --lh-1: 1.25;
+  --lh-2: 1.375;
+  --lh-3: 1.5;
+  --lh-4: 1.75;
+  --lh-5: 2;
+
+  --ls-0: -.05em;
+  --ls-1: .025em;
+  --ls-2: .050em;
+  --ls-3: .075em;
+  --ls-4: .150em;
+  --ls-5: .500em;
+  --ls-6: .750em;
+  --ls-7: 1em;
+
+  --size-0: -.25rem;
+  --size-1: .25rem;
+  --size-2: .5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 3rem;
+  --size-9: 4rem;
+  --size-10: 5rem;
+  --size-11: 7.5rem;
+  --size-12: 10rem;
+  --size-13: 15rem;
+  --size-14: 20rem;
+  --size-15: 30rem;
+
+  // Nav
+  --nav-background: var(--clr-dark);
+  --nav-logo-width-mobile: 238px;
+  --nav-logo-width: 238px;
+  --nav-breakpoint: $navbar-breakpoint;
+
+  --transition: 0.3s;
+}

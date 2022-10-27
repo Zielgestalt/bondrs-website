@@ -1,0 +1,131 @@
+.text-flow {
+  & > *:not(.no-flow) + * {
+    margin-top: var(--size-3);
+  }
+
+  @for $i from 1 through 10 {
+    &.is-flow-#{$i} > *:not(.no-flow) + * {
+      margin-top: var(--size-#{$i});
+    }
+  }
+}
+
+.is-pointer {
+  cursor: pointer;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-relative {
+  position: relative;
+}
+
+.is-hidden-mobile {
+  @if map-get($breakpoints, "lg") {
+    @media (max-width: map-get($breakpoints, "lg")) {
+      display: none;
+    }
+  }
+}
+
+.has-icon {
+  --icon-width: 3rem;
+
+  @if map-get($breakpoints, "md") {
+    @media (min-width: map-get($breakpoints, "md")) {
+      --icon-width: 3.5rem;
+    }
+  }
+
+  padding-left: calc(var(--icon-width) + 1rem);
+  position: relative;
+
+  svg {
+    position: absolute;
+    left: 0;
+    width: var(--icon-width);
+    height: var(--icon-width);
+    color: var(--link);
+  }
+}
+
+.text-link {
+  display: inline;
+  color: var(--link);
+
+  &.has-icon {
+  --icon-width: 1.5rem;   
+  }
+}
+
+.is-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.is-background, 
+.is-background img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.background-mobile-left {
+  .is-background img {
+    @media (max-width: map-get($breakpoints, "lg")) {
+      object-position: left;
+    }
+  }
+}
+
+.is-background-half-left {
+  position: absolute;
+  z-index: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+  max-height: 550px;
+  top: 0;
+  left: 0;
+}
+
+.is-background-half-right {
+  position: absolute;
+  z-index: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 45%;
+  height: 100%;
+  max-height: 550px;
+  top: 0;
+  right: 0;
+}
+
+.has-background {
+  position: relative;
+  overflow: hidden;
+  margin-inline: calc(var(--size-5) * -1);
+  padding-block: var(--size-10);
+}
+
+.is-flex {
+  display: flex;
+}
+
+.flex-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
