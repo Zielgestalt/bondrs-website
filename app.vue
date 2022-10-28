@@ -3,9 +3,11 @@
     <LayoutNavbar />
     <LayoutHero :hero="hero" />
 
-    <div class="container box text-flow" style="transform: translateY(-5rem);">
-      <h2 class="heading-4 is-uppercase">{{ what.headline }}</h2>
-      <p>{{ what.copy }}</p>
+    <div class="container" style="transform: translateY(-5rem); padding-inline: 2rem;">
+      <div class="box text-flow">
+        <h2 class="heading-4 is-uppercase">{{ what.headline }}</h2>
+        <p>{{ what.copy }}</p>
+      </div>
     </div>
 
     <section id="how" class="circle has-decoration text-flow is-flow-10">
@@ -44,25 +46,7 @@
 
         <BondrsEpoch :content="bondrs.epoch" />
 
-        <div class="box glass text-flow is-flow-6" style="max-width: 100%; overflow: hidden;">
-          <VaultStrategy :vaultAddress="bondrs.bearVault.vaultAddress" />
-
-          <div class="box large glass">
-
-            <div class="grid grid-2">
-              <div class="column is-flex">
-                <ClientOnly>
-                  <VaultInfo vaultType="bear" :vaultAddress="bondrs.bearVault.vaultAddress" :key="bondrs.bearVault.vaultAddress" />
-                </ClientOnly>
-              </div>
-              <div class="column is-flex">
-                <ClientOnly>
-                  <VaultInfo vaultType="bull" :vaultAddress="bondrs.bullVault.vaultAddress" :key="bondrs.bullVault.vaultAddress" />
-                </ClientOnly>
-              </div>          
-            </div>
-          </div>
-        </div>
+        <BondrsVaults :mat="bondrs" />
 
       </div>
     </section>
@@ -79,22 +63,7 @@
       </div>
     </section>
 
-    <section id="contact" class="has-decoration" style="z-index: 1;">
-      <div class="has-background">
-        <div class="is-background-half-left">
-          <SvgIlluContact/>
-        </div>
-        <div class="container">
-          <div class="grid-2">
-            <div class="column"></div>
-            <div class="column text-flow is-flow-10">
-              <h2 class="heading-2">Need more answers?</h2>
-              <LayoutContact />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <BondrsContact />
 
     <LayoutFooter />
   </div>
@@ -206,24 +175,24 @@
     copy: 'Phasellus sodales est id sapien condimentum sagittis. Vivamus eget lorem augue. Nunc ut diam tellus. Fusce mattis luctus sem, sollicitudin tincidunt ante ullamcorper',
     members: [
       {
-        name: 'John Doe',
+        name: 'Tony Tsigonias',
+        image: 'tony.jpg',
+        position: 'Core Member',
+        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
+        linkedin: 'https://www.linkedin.com/in/tony-tsigonias-44b163227/'
+      },
+      {
+        name: 'David Cohen',
+        image: 'david.jpg',
+        position: 'Core Member',
+        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
+        linkedin: 'https://www.linkedin.com/in/david-cohen-520/'
+      },
+      {
+        name: 'Amin El-Gazzar',
         image: 'amin.jpg',
-        position: 'Core Member',
-        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
-        linkedin: 'https://www.linkedin.com/in/amin-el-gazzar-7299b2100/'
-      },
-      {
-        name: 'John Doe',
-        image: 'dummy.jpg',
-        position: 'Core Member',
-        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
-        linkedin: 'https://www.linkedin.com/in/amin-el-gazzar-7299b2100/'
-      },
-      {
-        name: 'John Doe',
-        image: 'dummy.jpg',
-        position: 'Core Member',
-        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
+        position: 'Advisor',
+        copy: 'Amin is a serial entrepreneur and technologist. He has founded several startups in the United States and around the globe. He is fluent in English and German and has proven that he is always thinking outside the box. He holds several patents in technologies from databases to messaging.',
         linkedin: 'https://www.linkedin.com/in/amin-el-gazzar-7299b2100/'
       }
     ]

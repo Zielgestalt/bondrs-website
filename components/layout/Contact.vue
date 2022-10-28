@@ -8,7 +8,7 @@
         <textarea row="5" name="message" v-model="message" required></textarea>
       </label>
     </p>
-    <div class="grid-2">
+    <div class="form-grid">
       <p>
         <label>
           Your name:
@@ -81,4 +81,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "assets/scss/variables/variables";
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @if map-get($breakpoints, "md") {
+    @media (min-width: map-get($breakpoints, "md")) {
+      gap: var(--size-9);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+</style>
 

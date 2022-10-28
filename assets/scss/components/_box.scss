@@ -7,6 +7,11 @@
   border-radius: 1rem;
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(1.5rem);
+  margin-inline: -2rem;
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    margin-inline: 0;
+  }
 
   &[data-theme="dark"] {
     // background: var(--clr-dark);
@@ -21,11 +26,11 @@
       gap: 8rem;
     }
 
-    @media (min-width: map-get($breakpoints, "md")) {
-      margin-inline: 0;
-      padding: 4rem;
-      margin-bottom: 0;
-    }
+    // @media (min-width: map-get($breakpoints, "md")) {
+    //   margin-inline: 0;
+    //   padding: 4rem;
+    //   margin-bottom: 0;
+    // }
   }
 
   &.glass {

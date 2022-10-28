@@ -146,12 +146,6 @@ const info = computed(() => {
     transform: translateX(-50%);
     display: block;
   }
-
-  @media (min-width: map-get($breakpoints, "md")) {
-    &-header {
-      padding-right: 5rem;
-    }
-  }
 }
 
 ul {
