@@ -56,7 +56,7 @@
 @import "assets/scss/variables/variables";
 .hero {
   position: relative;
-  padding: 0 2rem 16rem;
+  padding: 2rem 2rem 16rem;
   min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@
   }
 
   @media (min-width: map-get($breakpoints, "md")) {
-    padding: 0 2rem 20rem;
+    padding: 2rem 2rem 20rem;
   }
 
   @media (min-width: map-get($breakpoints, "lg")) {
@@ -87,10 +87,9 @@
     top: 0;
     background-color: var(--clr-dark);
     background: var(--gradient-bg);
-    opacity: 0;
+    transform: translateY(-20%);
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      opacity: 1;
       transform: translateY(-10%);
     }
   }
