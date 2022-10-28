@@ -90,7 +90,8 @@
     opacity: 0;
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      opacity: 0.5;
+      opacity: 1;
+      transform: translateY(-10%);
     }
   }
 
