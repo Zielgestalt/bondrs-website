@@ -1,6 +1,6 @@
 <template>
   <div class="team">
-    <div class="grid-3">
+    <div class="grid-team">
       <div v-for="(member, index) in props.members" class="member text-flow is-flow-7">
         <div class="member-image">
           <img :src="`/images/team/${member.image}`" :alt="member.name" />
@@ -27,11 +27,30 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/variables/variables";
+  .grid-team {
+    display: grid;
+    gap: var(--size-9);
+    grid-template-columns: 1fr;
+
+    @media (min-width: map-get($breakpoints, "md")) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .team {
+    max-width: 900px;
+    margin-inline: auto;
+  }
   .member {
     &-image {
       background: var(--clr-grey-1);
       aspect-ratio: 3 / 4;
       width: 100%;
+      max-width: 274px;
       border-radius: 1rem;
       overflow: hidden;
 
