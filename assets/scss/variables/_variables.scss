@@ -129,5 +129,17 @@ $navbar-breakpoint: 1200px;
   --nav-logo-width: 238px;
   --nav-breakpoint: $navbar-breakpoint;
 
+   // Forms
+   --form-element-spacing-vertical: 0.75rem;
+   --form-element-spacing-horizontal: 1rem;
+   --form-element-background-color: var(--clr-light);
+   --form-element-border-width: 1px;
+   --form-element-border-color: hsla(0, 0%, 65%, 0.3);
+   --form-element-color: var(--clr-grey-6);
+   --form-element-active-border-color: var(--clr-grey-6);
+   --form-element-active-background-color: var(--clr-light);
+
+  // General
+  --border-radius: 1rem;
   --transition: 0.3s;
 }

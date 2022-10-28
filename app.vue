@@ -128,9 +128,18 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="has-background has-decoration" style="z-index: 1;">
+      <div class="is-background-half-left">
+        <SvgIlluContact/>
+      </div>
       <div class="container">
-        ToDo: Contact section
+        <div class="grid-2">
+          <div class="column"></div>
+          <div class="column text-flow is-flow-10">
+            <h2 class="heading-2">Need more answers?</h2>
+            <LayoutContact />
+          </div>
+        </div>
       </div>
     </section>
 

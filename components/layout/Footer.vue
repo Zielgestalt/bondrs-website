@@ -43,7 +43,9 @@
           © {{ new Date().getFullYear() }} by BONDRS.
         </div>
         <div class="column"></div>
-        <div class="comumn">Social Media</div>
+        <div class="comumn">
+          <BondrsSocialMedia />
+        </div>
       </div>
     </div>
   </footer>
