@@ -22,58 +22,9 @@
 
       </div>
 
-      <div class="bull has-background">
-        <div class="is-background-half-left">
-          <SvgBullLeft />
-        </div>
-        <div class="container">
-          <div class="grid-2">
-            <div class="column">
-              
-            </div>
-            <div class="copy text-flow is-flow-7">
-              <h2 class="heading-2 is-uppercase">{{ pick.bull.headline }}</h2>
-              <p class="heading-4">{{ pick.bull.copy }}</p>
-              <ul class="iconlist text-flow is-flow-7">
-                <li v-for="(item, bullindex) in pick.bull.list" :key="`bull-${bullindex}`" class="text-flow is-flow-2">
-                  <span class="signetitem">
-                    <SvgIcon />
-                  </span>
-                  <p class="heading-4">{{ item.headline }}</p>
-                  <p>{{ item.copy }}</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BondrsBull :mat="pick.bull" />
 
-      <div class="bear has-background">
-        <div class="is-background-half-right">
-          <SvgBearRight />
-        </div>
-
-        <div class="container">
-          <div class="grid-2">
-            <div class="copy text-flow is-flow-7">
-              <h2 class="heading-2 is-uppercase">{{ pick.bear.headline }}</h2>
-              <p class="heading-4">{{ pick.bear.copy }}</p>
-              <ul class="iconlist text-flow is-flow-7">
-                <li v-for="(item, bearindex) in pick.bear.list" :key="`bear-${bearindex}`" class="text-flow is-flow-2">
-                  <span class="signetitem">
-                    <SvgIcon icon="bear" />
-                  </span>
-                  <p class="heading-4">{{ item.headline }}</p>
-                  <p>{{ item.copy }}</p>
-                </li>
-              </ul>
-            </div>
-
-            <div class="column">
-            </div>
-          </div>
-        </div>
-      </div>
+      <BondrsBear :mat="pick.bear" />
 
     </section>
 

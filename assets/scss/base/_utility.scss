@@ -131,6 +131,16 @@
   margin-inline: calc(var(--size-5) * -1);
   padding-inline: var(--size-5);
   padding-block: var(--size-10);
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    margin-inline: calc(var(--size-8) * -1);
+    padding-inline: var(--size-8);
+  }
+
+  @media (min-width: map-get($breakpoints, "xl")) {
+    margin-inline: calc(var(--size-5) * -1);
+    padding-inline: var(--size-5);
+  }
 }
 
 .is-flex {

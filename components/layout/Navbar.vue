@@ -275,7 +275,11 @@ aside {
   position: relative;
   width: 100vw;
   overflow-x: clip;
-  padding-top: 5rem;
+  padding-top: 4rem;
+
+  @media (min-width: map-get($breakpoints, "xl")) {
+    padding-top: 5rem;
+  }
 }
 
 .navbar-main {
