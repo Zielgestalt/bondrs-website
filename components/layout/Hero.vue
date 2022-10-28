@@ -49,10 +49,11 @@
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/variables/variables";
 .hero {
   position: relative;
-  padding: 10rem 1rem;
-  // min-height: 80vh;
+  padding: 12rem 1rem 8rem;
+  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,15 +63,31 @@
   p {
     font-size: var(--fs-3);
   }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    padding: 0 2rem 20rem;
+  }
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    min-height: unset;
+    padding: 10rem 1rem;
+  }
 }
 
 .is-hero-image {
-  width: 66vw;
+  width: 100vw;
+  height: 100%;
   position: absolute;
   left: unset;
   right: 0;
-  top: calc(50% + 3rem);
-  transform: translateY(-50%);
+  top: 0;
   padding: 0;
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    height: auto;
+    width: 66vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 </style>

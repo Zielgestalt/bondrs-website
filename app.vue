@@ -93,7 +93,7 @@
 
         <BondrsEpoch :content="bondrs.epoch" />
 
-        <div class="box glass text-flow is-flow-6">
+        <div class="box glass text-flow is-flow-6" style="max-width: 100%; overflow: hidden;">
           <VaultStrategy :vaultAddress="bondrs.bearVault.vaultAddress" />
 
           <div class="box large glass">
@@ -128,16 +128,18 @@
       </div>
     </section>
 
-    <section id="contact" class="has-background has-decoration" style="z-index: 1;">
-      <div class="is-background-half-left">
-        <SvgIlluContact/>
-      </div>
-      <div class="container">
-        <div class="grid-2">
-          <div class="column"></div>
-          <div class="column text-flow is-flow-10">
-            <h2 class="heading-2">Need more answers?</h2>
-            <LayoutContact />
+    <section id="contact" class="has-decoration" style="z-index: 1;">
+      <div class="has-background">
+        <div class="is-background-half-left">
+          <SvgIlluContact/>
+        </div>
+        <div class="container">
+          <div class="grid-2">
+            <div class="column"></div>
+            <div class="column text-flow is-flow-10">
+              <h2 class="heading-2">Need more answers?</h2>
+              <LayoutContact />
+            </div>
           </div>
         </div>
       </div>

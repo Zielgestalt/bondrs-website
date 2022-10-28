@@ -54,21 +54,27 @@
 
 <style lang="scss" scoped>
 .epoch-status {
+  @import "assets/scss/variables/variables";
   position: relative;
 
   .timeline {
-    position: absolute;
-    top: 1.25rem;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--clr-secondary);
-    border-radius: 2px;
-
-    &-active {
+    display: none;
+    
+    @media (min-width: map-get($breakpoints, "lg")) {
+      display: block;
+      position: absolute;
+      top: 1.25rem;
+      left: 0;
+      width: 100%;
       height: 3px;
-      border-radius: inherit;
-      background: var(--clr-primary);
+      background: var(--clr-secondary);
+      border-radius: 2px;
+
+      &-active {
+        height: 3px;
+        border-radius: inherit;
+        background: var(--clr-primary);
+      }
     }
   }
 

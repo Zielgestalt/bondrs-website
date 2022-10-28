@@ -125,14 +125,11 @@ const info = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/variables/variables";
 .vault {
   position: relative;
   padding-bottom: 14rem;
   // padding-right: 6rem;
-
-  &-header {
-    padding-right: 5rem;
-  }
 
   &-icon {
     position: absolute;
@@ -148,6 +145,12 @@ const info = computed(() => {
     left: 50%;
     transform: translateX(-50%);
     display: block;
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    &-header {
+      padding-right: 5rem;
+    }
   }
 }
 

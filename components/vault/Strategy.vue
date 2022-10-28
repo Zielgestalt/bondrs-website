@@ -19,18 +19,32 @@ const { data: vaultData, pending } = await useFetch(`https://live.yieldster.fina
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/variables/variables";
 .strategy {
   // --color: var(--clr-dark);
   // --heading: var(--clr-dark);
-  padding-right: 10rem;
+  // padding-right: 10rem;
   position: relative;
 
   &-icon {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -3rem;
+    top: -3rem;
     width: 8rem;
     transform: translate(2rem, -3rem);
+    z-index: -1;
+    opacity: 0.2;
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    padding-right: 10rem;
+
+    &-icon {
+      right: 0;
+      top: 0;
+      z-index: 1;
+      opacity: 1;
+    }
   }
 }
 </style>

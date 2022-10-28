@@ -80,6 +80,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/variables/variables";
+
 $arrowWidth: 1rem;
 
 @mixin arrowRight {
@@ -99,16 +101,20 @@ $arrowWidth: 1rem;
 }
 .bondrs-circle {
   position: relative;
-  padding: 0 2rem 4rem;
+  padding: 0 1.5rem 4rem 0;
   padding-bottom: 4rem;
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    padding: 0 2rem 4rem;
+  }
 
   .circle {
     $border: 4px;
 
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: calc(50% - 1rem);
+    width: calc(50% + 1.5rem);
     height: calc(100% - 5rem);
     margin: auto;
     box-sizing: border-box;
@@ -134,24 +140,43 @@ $arrowWidth: 1rem;
       position: absolute;
       bottom: calc($border / 2 * -1);
       left: 50%;
-      transform: translate(-50%, 50%);
+      transform: translate(-50%, 50%) scale(-1);
+    }
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      left: 0;
+      width: 100%;
+
+      &::after {
+        transform: translate(-50%, 50%) scaleX(0);
+      }
     }
   }
 }
 .lc-card {
   width: 100%;
   position: relative;
-  padding: 4rem 1.5rem 0;
+  padding: 4rem 0.75rem 0;
   z-index: 1;
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    padding: 4rem 1.5rem 0;
+  }
 
   &:not(:last-child) {
     &::after {
       @include arrowRight();
       content: '';
       position: absolute;
-      top: calc(2rem + 2px);
-      left: calc(100% + 2rem);
-      transform: translate(-50%, 100%);
+      top: calc(100% + 2px);
+      left: calc(50% - 2px);
+      transform: translate(-50%, 50%) rotate(90deg);
+
+      @media (min-width: map-get($breakpoints, "lg")) {
+        transform: translate(-50%, 100%) rotate(0);
+        top: calc(2rem + 2px);
+        left: calc(100% + 2rem);
+      }
     }
   }
 

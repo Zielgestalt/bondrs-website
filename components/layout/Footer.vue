@@ -126,7 +126,7 @@
       gap: var(--size-9);
       grid-template-columns: 1fr;
 
-      @if map-get($breakpoints, "lg") {
+      @media (min-width: map-get($breakpoints, "lg")) {
         grid-template-columns: 1fr 1fr 2fr;
       }
     }

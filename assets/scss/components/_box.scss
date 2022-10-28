@@ -13,10 +13,18 @@
   }
 
   &.large {
-    padding: 4rem;
+    padding: 2rem;
+    margin-inline: -2rem;
+    margin-bottom: -2rem;
 
     .grid-2 {
       gap: 8rem;
+    }
+
+    @media (min-width: map-get($breakpoints, "md")) {
+      margin-inline: 0;
+      padding: 4rem;
+      margin-bottom: 0;
     }
   }
 

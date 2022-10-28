@@ -1,6 +1,7 @@
 :where(section) {
   background: var(--bg);
   padding: var(--size-8) var(--size-5);
+  max-width: 100%;
   position: relative;
 
   @if map-get($breakpoints, "lg") {
