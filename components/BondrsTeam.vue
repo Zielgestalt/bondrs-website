@@ -1,7 +1,7 @@
 <template>
   <div class="team">
     <div class="grid-team">
-      <div v-for="(member, index) in props.members" class="member text-flow is-flow-7">
+      <div v-for="(member, index) in props.members" class="member text-flow is-flow-7 is-observed onvisible-fade-up" :class="`is-staggered-${index}`">
         <div class="member-image">
           <img :src="`/images/team/${member.image}`" :alt="member.name" />
         </div>
