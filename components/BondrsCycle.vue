@@ -3,7 +3,7 @@
 
     <div class="circle"></div>
     <div class="grid-3">
-      <div v-for="(card, index) in content" :key="index" class="lc-card">
+      <div v-for="(card, index) in content" :key="index" class="lc-card is-observed onvisible-fade-up" :class="`is-staggered-${index}`">
   
         <div class="lc-card-top">
           <SvgOwl v-if="card.icon === 'owl'" class="owl" />

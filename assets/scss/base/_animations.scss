@@ -1,0 +1,78 @@
+$animation-transition-short: $transition-short !default;
+$animation-transition-medium: $transition-medium !default;
+
+@media (min-width: map-get($breakpoints, "lg")) {
+  .onload-fade-up,
+  .onvisible-fade-up {
+    will-change: transform, opacity;
+    transition: transform $animation-transition-medium ease-out, opacity $animation-transition-medium ease-out;
+    transform: translateY(15px);
+    opacity: 0;
+
+    &.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .onload-fade-down,
+  .onvisible-fade-down {
+    will-change: transform, opacity;
+    transition: transform $animation-transition-medium ease-out, opacity $animation-transition-medium ease-out;
+    transform: translateY(-15px);
+    opacity: 0;
+
+    &.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animation-ready {
+    .onload-fade-up,
+    .onload-fade-down {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .onload-fade-right,
+  .onvisible-fade-right {
+    will-change: transform, opacity;
+    transition: transform $animation-transition-medium ease-out, opacity $animation-transition-medium ease-out;
+    transform: translateX(-50px);
+    opacity: 0;
+
+    &.is-visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .onload-fade-left,
+  .onvisible-fade-left {
+    will-change: transform, opacity;
+    transition: transform $animation-transition-medium ease-out, opacity $animation-transition-medium ease-out;
+    transform: translateX(20px);
+    opacity: 0;
+
+    &.is-visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animation-ready {
+    .onload-fade-right {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .is-staggered-#{$i} {
+      transition-delay: $i * $animation-transition-short;
+    }
+  }
+}
+

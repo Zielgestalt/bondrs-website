@@ -1,7 +1,7 @@
 <template>
   <div id="top">
     <LayoutNavbar />
-    <LayoutHero :hero="hero" />
+    <LayoutHero :hero="hero" class="is-observed" />
 
     <div class="container" style="transform: translateY(-5rem); padding-inline: 2rem;">
       <div class="box text-flow">
@@ -24,9 +24,9 @@
 
       </div>
 
-      <BondrsBull :mat="pick.bull" />
+      <BondrsBull :mat="pick.bull" class="is-observed" />
 
-      <BondrsBear :mat="pick.bear" />
+      <BondrsBear :mat="pick.bear" class="is-observed" />
 
     </section>
 
@@ -44,9 +44,9 @@
           <p>{{ bondrs.copy }}</p>
         </div>
 
-        <BondrsEpoch :content="bondrs.epoch" />
+        <BondrsEpoch :content="bondrs.epoch" class="is-observed" />
 
-        <BondrsVaults :mat="bondrs" />
+        <BondrsVaults :mat="bondrs" class="is-observed" />
 
       </div>
     </section>
@@ -59,7 +59,7 @@
           <p>{{ team.copy }}</p>
         </div>
 
-        <BondrsTeam :members="team.members" />
+        <BondrsTeam :members="team.members" class="is-observed" />
       </div>
     </section>
 
@@ -197,4 +197,22 @@
       }
     ]
   }
+
+  onMounted(() => {
+    const sections = document.querySelectorAll('.is-observed')
+    const options = {
+      threshold: 0.5
+    }
+    const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible")
+          console.log(entry.target)
+        }
+      })
+    }, options)
+    sections.forEach(section => {
+      observer.observe(section)
+    })
+  })
 </script>
