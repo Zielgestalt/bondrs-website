@@ -17,7 +17,8 @@
           </div>
           <p>{{ props.hero.copy }}</p>
           <div class="button-group">
-            <NuxtLink class="button cta is-gradient" :to="props.hero.cta1.url" target="_blank">{{ props.hero.cta1.text}}</NuxtLink>
+            <a class="button cta is-gradient" href="#how">{{ props.hero.cta1.text}}</a>
+            <!-- <NuxtLink class="button cta is-gradient" :to="props.hero.cta1.url" target="_blank">{{ props.hero.cta1.text}}</NuxtLink> -->
           </div>
         </div>
       </div>
@@ -131,9 +132,14 @@
 
     @media (min-width: map-get($breakpoints, "lg")) {
       width: 5%;
-      right: 10%;
+      right: 12%;
       bottom: unset;
-      top: 18%;
+      top: 20%;
+      opacity: 0.8;
+
+      animation: sun 50s forwards;
+      // animation-delay: 1s;
+      animation-timing-function: ease-out;
     }
   }
 
@@ -242,6 +248,17 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes sun {
+  0% {
+    opacity: 0.8;
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.4) translate(125%, -65%);
   }
 }
 </style>

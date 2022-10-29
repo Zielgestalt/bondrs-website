@@ -4,6 +4,10 @@
     <SvgBear v-else-if="props.vaultType === 'bear'" class="vault-icon no-flow" />
     <SvgOwl v-else-if="props.vaultType === 'owl'" class="vault-icon no-flow" /> -->
 
+    <div v-if="pending" class="loading">
+      <span style="font-size: 4rem; color: red;">Loading ...</span>
+    </div>
+
     <img :src="`data:image/png;base64, ${vaultData.data.vault.logoImg.data}`" width="60" />
     <div class="vault-header text-flow is-flow-2">
       <h3 class="heading-2">{{ vaultData.data.vault.vaultName }}</h3>
@@ -44,10 +48,10 @@ const props = defineProps({
   vaultAddress: { type: String, default: '' },
 })
 
-const { data: vaultData, pending } = await useFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`, { key: props.vaultAddress })
+const { data: vaultData, pending } = await useLazyFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`, { key: props.vaultAddress })
 // const { data: vaultTVL, pending: pendingTVL } = await useFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}&timestamp=21-10-2022 00:00:00&is_Date=true`)
-const { data: vaultTVL, pending: pendingTVL } = await useFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}`, { key: props.vaultAddress + 'tvl' })
-const { data: vaultAPR, pending: pendingAPR } = await useFetch(`https://live.yieldster.finance/Vault/sdk/v2.0/yieldster/apr?vaultAddress=${props.vaultAddress}&currentBlockNumber=`, { key: props.vaultAddress + 'apr' })
+const { data: vaultTVL, pending: pendingTVL } = await useLazyFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}`, { key: props.vaultAddress + 'tvl' })
+const { data: vaultAPR, pending: pendingAPR } = await useLazyFetch(`https://live.yieldster.finance/Vault/sdk/v2.0/yieldster/apr?vaultAddress=${props.vaultAddress}&currentBlockNumber=`, { key: props.vaultAddress + 'apr' })
 
 const apyInception = computed(() => {
   if (pending.value) {
@@ -130,6 +134,7 @@ const info = computed(() => {
   position: relative;
   padding-bottom: 14rem;
   // padding-right: 6rem;
+  min-height: 687px;
 
   &-icon {
     position: absolute;

@@ -5,7 +5,7 @@
       <LazySvgIlluSun class="illu-sun" />
       <LazySvgIlluSkyscraper3 class="illu-skyscraper" />
       <LazySvgIlluGrid class="illu-grid" />
-      <LazySvgIlluBear class="illu-bear" />
+      <LazySvgIlluBear class="illu-bear is-observed onvisible-fade-down is-staggered-3" />
     </div>
 
     <div class="container">
