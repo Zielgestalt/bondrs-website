@@ -6,15 +6,17 @@
 
       <div class="grid-vaults">
         <div class="column is-flex">
-          <ClientOnly>
+          <LazyVaultInfo vaultType="bear" :vaultAddress="mat.bearVault.vaultAddress" :key="mat.bearVault.vaultAddress" />
+          <!-- <ClientOnly>
             <VaultInfo vaultType="bear" :vaultAddress="mat.bearVault.vaultAddress" :key="mat.bearVault.vaultAddress" />
-          </ClientOnly>
+          </ClientOnly> -->
         </div>
         <hr />
         <div class="column is-flex">
-          <ClientOnly>
+          <LazyVaultInfo vaultType="bull" :vaultAddress="mat.bullVault.vaultAddress" :key="mat.bullVault.vaultAddress" />
+          <!-- <ClientOnly>
             <VaultInfo vaultType="bull" :vaultAddress="mat.bullVault.vaultAddress" :key="mat.bullVault.vaultAddress" />
-          </ClientOnly>
+          </ClientOnly> -->
         </div>          
       </div>
     </div>
