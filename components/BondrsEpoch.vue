@@ -3,7 +3,7 @@
     <div class="timeline">
       <div class="timeline-active" :style="{ width: currentWidth + '%'}"></div>
     </div>
-    <div v-for="(item, index) in props.content" :key="index" class="epoch" :class="{ active: isActive(index), current: isCurrent(index) }">
+    <div v-for="(item, index) in props.content" :key="index" class="epoch is-observed onvisible-fade-left" :class="[{ active: isActive(index), current: isCurrent(index)}, `is-staggered-${index}`]">
       <span class="epoch-number">{{ index + 1 }}</span>
       <span class="epoch-name heading-4">{{ item.name }}</span>
       <span class="epoch-date">{{ item.date }}</span>
@@ -144,14 +144,15 @@
       opacity: 0.5;
     }
 
+    &.active {
+      --bg: var(--clr-grey-3);
+    }
+
     &.current {
+      --bg: var(--clr-primary);
       .epoch-number::after {
         animation: pulse 2s infinite;
       }
-    }
-
-    &.active {
-      --bg: var(--clr-primary);
     }
   }
 }

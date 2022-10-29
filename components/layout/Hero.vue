@@ -194,6 +194,9 @@
       top: 27%;
       left: unset;
       right: 20%;
+      animation: pulse 10s infinite;
+      animation-delay: 5s;
+      transform-origin: bottom center;
     }
 
     @media (min-width: map-get($breakpoints, "xl")) {
@@ -219,12 +222,26 @@
       bottom: unset;
       left: unset;
       right: 5%;
+      animation: pulse 10s infinite;
+      transform-origin: bottom center;
     }
 
     @media (min-width: map-get($breakpoints, "xl")) {
       width: 15%;
       right: 15%;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>

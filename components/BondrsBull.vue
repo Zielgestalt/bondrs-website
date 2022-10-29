@@ -17,7 +17,7 @@
           <h2 class="heading-2 is-uppercase">{{ mat.headline }}</h2>
           <p class="heading-4">{{ mat.copy }}</p>
           <ul class="iconlist text-flow is-flow-7">
-            <li v-for="(item, bullindex) in mat.list" :key="`bull-${bullindex}`" class="text-flow is-flow-2">
+            <li v-for="(item, bullindex) in mat.list" :key="`bull-${bullindex}`" class="text-flow is-flow-2 is-observed onvisible-fade-up" :class="`is-staggered-${bullindex}`">
               <span class="signetitem">
                 <SvgIcon />
               </span>
