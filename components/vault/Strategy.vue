@@ -4,6 +4,7 @@
     <div class="strategy-description text-flow">
       <h3 class="heading-3 is-uppercase">Current Strategy</h3>
       <p>{{ vaultData.data.vault.description }}</p>
+      <p><NuxtLink :to="readmore.link" target="_blank">> {{ readmore.text }}</NuxtLink></p>
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 
 const props = defineProps({
   vaultAddress: { type: String, default: '' },
+  readmore: { type: Object, default: {} },
 })
 
 const { data: vaultData, pending } = await useFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`)

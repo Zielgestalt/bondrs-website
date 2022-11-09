@@ -25,6 +25,7 @@
               <p>{{ item.copy }}</p>
             </li>
           </ul>
+          <p><NuxtLink :to="mat.readmore.link">> {{ mat.readmore.text }}</NuxtLink></p>
         </div>
       </div>
     </div>

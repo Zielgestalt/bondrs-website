@@ -1,19 +1,19 @@
 <template>
   <div class="box glass text-flow is-flow-6" style="overflow: hidden;">
-    <VaultStrategy :vaultAddress="mat.bearVault.vaultAddress" />
+    <VaultStrategy :vaultAddress="mat.bearVault.vaultAddress" :readmore="mat.bearVault.readmore" />
 
     <div class="box large glass">
 
       <div class="grid-vaults">
         <div class="column is-flex">
-          <LazyVaultInfo vaultType="bear" :vaultAddress="mat.bearVault.vaultAddress" :key="mat.bearVault.vaultAddress" />
+          <LazyVaultInfo vaultType="bear" :vaultAddress="mat.bearVault.vaultAddress" :readmore="mat.bearVault.readmore" :key="mat.bearVault.vaultAddress" />
           <!-- <ClientOnly>
             <VaultInfo vaultType="bear" :vaultAddress="mat.bearVault.vaultAddress" :key="mat.bearVault.vaultAddress" />
           </ClientOnly> -->
         </div>
         <hr />
         <div class="column is-flex">
-          <LazyVaultInfo vaultType="bull" :vaultAddress="mat.bullVault.vaultAddress" :key="mat.bullVault.vaultAddress" />
+          <LazyVaultInfo vaultType="bull" :vaultAddress="mat.bullVault.vaultAddress" :readmore="mat.bearVault.readmore" :key="mat.bullVault.vaultAddress" />
           <!-- <ClientOnly>
             <VaultInfo vaultType="bull" :vaultAddress="mat.bullVault.vaultAddress" :key="mat.bullVault.vaultAddress" />
           </ClientOnly> -->

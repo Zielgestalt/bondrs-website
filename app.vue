@@ -86,12 +86,12 @@
 
   const what = {
     headline: 'What are interest rate swaps?',
-    copy: 'In traditional finance Interest rate swaps are derivative financial contracts that let two parties exchange streams of cash flows based on predetermined interest rates and principal amounts. In commercial real estate, for example, the most common type of interest rate swap is a fixed-for-variable exchange.  This means one party exchanges a variable stream of interest payments (or cashflows) for a fixed stream of interest payments (or cashflows).',
+    copy: 'In traditional finance Interest rate swaps are derivative financial contracts that let two parties exchange streams of cash flows based on predetermined interest rates and principal amounts. Interest rate swaps are an important part of the financial system allowing large institutions to manage their debt, with a market size of nearly $500 trillion 2021 alone. In commercial real estate, for example, the most common type of interest rate swap is a fixed-for-variable exchange.  This means one party exchanges a variable stream of interest payments (or cashflows) for a fixed stream of interest payments (or cashflows).',
   }
 
   const how = {
     headline: 'How does it work',
-    copy: 'Each Bondrs consists of 2 vaults and a yield generating strategy. These vaults cycle through 2 epochs. An auction epoch during which the final guaranteed interest rate for the bear vault is determined and the term epoch.',
+    copy: 'Each Bondrs consists of 2 vaults and a yield generating strategy. These vaults cycle through 2 epochs. An auction term, during which investors are able to deposit and withdraw funds at will, the final guaranteed interest rate for the bear vault is determined and the earning term, during which funds are consolidated and locked for use in the strategy.',
   }
 
   const pick = {
@@ -103,17 +103,21 @@
       list: [
         {
           headline: 'Up to 400x leverage on yield generating strategies',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque '
+          copy: 'Funds from both vaults are consolidated and bulls earn all yields over the fixed rate guaranteed to the bears vastly increasing their earning potential per dollar.'
         },
         {
           headline: 'No liquidation risk',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque.'
+          copy: 'Once the auction term ends funds are consolidated and locked in a non-custodial vault until the end of the earnings term with zero chance of liquidation.'
         },
         {
           headline: 'Earn excess yield above fixed apy paid to Bears',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque '
+          copy: 'Yield for the bears is guaranteed by the deposits the bulls make and any funds earned by the strategy over this amount are split between the bulls proportionally allowing bulls to significantly increase their earnings through extra leverage.'
         },
-      ]
+      ],
+      readmore: {
+        link: '#',
+        text: 'Read more in the documentation'
+      }
     },
     bear: {
       headline: 'Bear',
@@ -121,21 +125,25 @@
       list: [
         {
           headline: 'Fixed term and fixed apy',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque '
+          copy: 'The term is determined by the strategy and your APY is guaranteed by the value of the bull vault at the end of the auction term creating a stable, predictable investment.'
         },
         {
           headline: '100% collateralized including guaranteed return',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque '
+          copy: 'Yields for the bear vault are guaranteed by deposits in the bull vault and funds are locked for the duration of the earnings term guaranteeing your returns when your bond matures.'
         },
         {
           headline: 'No liquidation risk',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque '
+          copy: 'As soon as the auction term ends funds are consolidated and locked in a non-custodial vault until the end of the earnings term with zero chance of liquidation.'
         },
         {
           headline: 'Attractive, predictable safe returns for investors',
-          copy: 'Donec id elementum diam. Cras enim odio, ornare in tellus non, fermentum ornare arcu. Pellentesque turpis felis, scelerisque '
+          copy: 'Fixed interest rate investments offer a safe and predictable way for investors to protect themselves against market instability and speculative products with BONDRS offering a further layer of security by insuring your returns.'
         }
-      ]
+      ],
+      readmore: {
+        link: '#',
+        text: 'Read more in the documentation'
+      }
     }
   }
 
@@ -162,30 +170,38 @@
     ],
     strategy: {},
     bullVault: {
-      vaultAddress: '0xf692d29f99155834f93a2c63d21586ea57b5fbec'
+      vaultAddress: '0xf692d29f99155834f93a2c63d21586ea57b5fbec',
+      readmore: {
+        link: '#',
+        text: 'Read more'
+      }
     },
     bearVault: {
       // vaultAddress: '0xda7c24edc4db22dcf1cf0631149d68bbd71e409b' // LIVA
-      vaultAddress: '0x62cad79a1b70cf5a0bf9446693d7ae1382b80da8'
+      vaultAddress: '0x62cad79a1b70cf5a0bf9446693d7ae1382b80da8',
+      readmore: {
+        link: '#',
+        text: 'Read more'
+      }
     }
   }
 
   const team = {
     headline: 'About us',
-    copy: 'Phasellus sodales est id sapien condimentum sagittis. Vivamus eget lorem augue. Nunc ut diam tellus. Fusce mattis luctus sem, sollicitudin tincidunt ante ullamcorper',
+    copy: 'At Bondrs we aim to bring one of the most prolific markets in traditional finance, Interest Rate Swaps, to DeFi. All transactions are done on-chain allowing for a level of transparency and decentralization that’s not possible in traditional finance in a largely trustless, automated environment that creates less bureaucracy, overhead and lets users retain custody of their own assets.',
     members: [
       {
         name: 'Tony Tsigonias',
         image: 'tony.jpg',
         position: 'Core Member',
-        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
+        copy: 'Tony is a successful entrepreneur who had his initial success in the stock market but has since ventured out into commercial real estate and blockchain development. He has a long history of successful marketing campaigns for companies with traditional securities and has a wealth of connections all in all fields of commerce all over the world.',
         linkedin: 'https://www.linkedin.com/in/tony-tsigonias-44b163227/'
       },
       {
         name: 'David Cohen',
         image: 'david.jpg',
         position: 'Core Member',
-        copy: 'Quisque maximus, felis quis varius tincidunt, urna libero ultrices magna, non maximus odio turpis vitae est. Aliquam sit amet urna lectus. Donec id elementum diam.',
+        copy: 'David has a professional background in business development and high level management with experience on multiple blockchain projects including DeFi, NFT’s, play to earn games and financial products. He’s considered a thought leader in the DeFi community as an advocate for the ethical management and development of blockchain products and is known for his work ethic and commitment to his goals.',
         linkedin: 'https://www.linkedin.com/in/david-cohen-520/'
       },
       {

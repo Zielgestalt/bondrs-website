@@ -33,7 +33,7 @@
   const content = [
     {
       icon: 'both',
-      headline: 'Funding epoch',
+      headline: 'Funding',
       copy: 'Review, Deposit & Withdraw',
       list: [
         {
@@ -48,7 +48,7 @@
     },
     {
       icon: 'owl',
-      headline: 'Term epoch',
+      headline: 'Term',
       copy: 'Funds are locked',
       list: [
         {
@@ -63,7 +63,7 @@
     },
     {
       icon: 'both',
-      headline: 'Terms end',
+      headline: 'Payout',
       copy: 'Terms end, funds unlock',
       list: [
         {

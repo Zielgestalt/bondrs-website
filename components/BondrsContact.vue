@@ -14,6 +14,7 @@
           <div class="column"></div>
           <div class="column text-flow is-flow-10">
             <h2 class="heading-2">Need more answers?</h2>
+            <p>Please reach out for the team directly in <NuxtLink to="https://discord.gg/JGnMPsKkcQ" target="_blank">Discord</NuxtLink> or write us a message:</p>
             <LayoutContact />
           </div>
         </div>

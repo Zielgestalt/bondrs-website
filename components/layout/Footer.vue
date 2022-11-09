@@ -21,8 +21,13 @@
           </nav>
         </div>
 
-        <div class="columm text-flow is-flow-2">
-          <h3>External Links</h3>
+        <div class="columm text-flow is-flow-8">
+          <BondrsSocialMedia />
+          <NuxtLink to="https://www.yieldster.io" target="_blank" class="poweredby text-flow is-flow-2">
+            <SvgYieldster />
+            <span>Bondrs is powered by Yieldster</span>
+          </NuxtLink>
+          <!-- <h3>External Links</h3>
 
           <div class="external-links">
             <ul>
@@ -33,7 +38,7 @@
                 </NuxtLink>
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
         
       </div>
@@ -43,8 +48,8 @@
           © {{ new Date().getFullYear() }} by BONDRS.
         </div>
         <div class="column"></div>
-        <div class="comumn">
-          <BondrsSocialMedia />
+        <div class="column">
+          <!-- <BondrsSocialMedia /> -->
         </div>
       </div>
     </div>
@@ -127,7 +132,7 @@
       grid-template-columns: 1fr;
 
       @media (min-width: map-get($breakpoints, "lg")) {
-        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
 
@@ -207,6 +212,19 @@
             }
           }
         }
+      }
+    }
+
+    .poweredby {
+      display: block;
+      text-decoration: none;
+
+      svg {
+        max-width: 14rem;
+      }
+
+      span {
+        display: block;
       }
     }
   }

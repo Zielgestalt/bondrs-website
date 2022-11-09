@@ -9,8 +9,8 @@
     </div>
 
     <div class="container">
-      <div class="bear-grid">
-        <div class="copy text-flow is-flow-7">
+      <div class="bear-grid" data-theme="bear">
+        <div class="copy text-flow is-flow-7" style="z-index: 1;">
           <h2 class="heading-2 is-uppercase">{{ mat.headline }}</h2>
           <p class="heading-4">{{ mat.copy }}</p>
           <ul class="iconlist text-flow is-flow-7">
@@ -22,6 +22,7 @@
               <p>{{ item.copy }}</p>
             </li>
           </ul>
+          <p><NuxtLink :to="mat.readmore.link">> {{ mat.readmore.text }}</NuxtLink></p>
         </div>
 
         <div class="column">

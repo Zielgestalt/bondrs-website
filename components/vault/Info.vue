@@ -12,6 +12,7 @@
     <div class="vault-header text-flow is-flow-2">
       <h3 class="heading-2">{{ vaultData.data.vault.vaultName }}</h3>
       <p>{{ vaultData.data.vault.description }}</p>
+      <p><NuxtLink :to="readmore.link" target="_blank" :data-theme="vaultType" style="background: transparent;">> {{ readmore.text }}</NuxtLink></p>
     </div>
 
     <ul class="vault-data text-flow" :class="props.vaultType">
@@ -46,6 +47,7 @@
 const props = defineProps({
   vaultType: { type: String, default: 'bear'},
   vaultAddress: { type: String, default: '' },
+  readmore: { type: Object, default: {} },
 })
 
 const { data: vaultData, pending } = await useLazyFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`, { key: props.vaultAddress })
