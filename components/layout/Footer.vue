@@ -4,7 +4,7 @@
       <div class="grid">
         <div class="column text-flow">
           <SvgLogo class="logo" />
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin commodo.</p>
+          <p>Bondrs is an on-chain interest rate swap protocol designed to give conservative investors access to secure, fixed term lending and aggressive investors up to 400x leverage with no liquidation risk.</p>
         </div>
 
         <div class="column text-flow">
