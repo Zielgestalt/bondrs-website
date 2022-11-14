@@ -73,7 +73,7 @@
   const hero = {
     overline: 'Bullish or Bearish? You decide',
     headline: 'Invest your way',
-    copy: 'Bondrs is an on-chain interest rate swap protocol designed to give conservative investors access to secure, fixed term lending and aggressive investors up to 400x leverage with no liquidation risk',
+    copy: 'BONDRS is an on-chain interest rate swap protocol designed to give conservative investors access to secure, fixed term lending and aggressive investors up to 400x leverage with no liquidation risk',
     cta1: {
       text: 'Learn more',
       url: '#',
@@ -130,10 +130,6 @@
         {
           headline: '100% collateralized including guaranteed return',
           copy: 'Yields for the bear vault are guaranteed by deposits in the bull vault and funds are locked for the duration of the earnings term guaranteeing your returns when your bond matures.'
-        },
-        {
-          headline: 'No liquidation risk',
-          copy: 'As soon as the auction term ends funds are consolidated and locked in a non-custodial vault until the end of the earnings term with zero chance of liquidation.'
         },
         {
           headline: 'Attractive, predictable safe returns for investors',
