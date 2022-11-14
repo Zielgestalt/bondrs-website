@@ -4,9 +4,42 @@
       <Logo />
       <h1>Bondrs</h1>
       <p>Coming soon...</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p v-if="subscribed">Thanks for subscribing.</p>
+      <newsletter-form
+        v-else
+        @subscribed="success"
+        headerText=""
+        buttonText="Sign Up"
+        inputPlaceholder="Your email"
+      >
+        <template #description>
+          <p>Be the first to know all news about BONDRS:</p>
+        </template>
+        <template #button-icon>
+          <!-- icon component -->
+        </template>
+      </newsletter-form>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const subscribed = ref(false)
+const success = () => {
+  console.log('Subscribed')
+  subscribed.value = true
+}
+</script>
+
+<style lang="scss">
+  form {
+    p {
+      margin-bottom: 0.75rem;
+    }
+  }
+</style>
 
 <style lang="scss" scoped>
   .coming-soon {

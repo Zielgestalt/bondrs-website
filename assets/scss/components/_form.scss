@@ -1,0 +1,73 @@
+form {
+  input {
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+  }
+
+  /// Standard
+  button {
+    margin: 0; // 2
+    overflow: visible; // 3
+    font-family: inherit; // 1
+    text-transform: none; // 1
+  }
+
+  // Correct the inability to style clickable types in iOS and Safari
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+
+  // Remove the inner border and padding in Firefox
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+  }
+
+  // Override
+
+  button,
+  .button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  [role="button"] {
+    --button-border-radius: 0 0.5rem 0.5rem 0;
+    --button-bg: hsl(329, 97%, 41%);
+    --button-bg-hover: hsl(329, 97%, 21%);
+    --button-text: white;
+
+    --fw: var(--fw-7);
+    // --b-bg: var(--button-bg);
+    // --b-t: var(--button-text);
+
+    font-family: var(--ff-headline);
+
+    padding: 0.5rem 2rem;
+    color: var(--button-text);
+    // font-weight: var(--fw-7);
+    background: var(--button-bg);
+    border: 1px solid var(--button-bg);
+    border-radius: var(--button-border-radius);
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color var(--transition),
+        border-color var(--transition), color var(--transition);
+    
+    &:hover,
+    &:active,
+    &:focus {
+      background: var(--button-bg-hover);
+      text-decoration: none;
+    }
+  }
+}
