@@ -30,7 +30,7 @@ const props = defineProps({
 @import "assets/scss/variables/variables";
   .grid-team {
     display: grid;
-    gap: var(--size-9);
+    gap: var(--size-6);
     grid-template-columns: 1fr;
 
     @media (min-width: map-get($breakpoints, "md")) {
@@ -38,11 +38,11 @@ const props = defineProps({
     }
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
   .team {
-    max-width: 900px;
+    // max-width: 900px;
     margin-inline: auto;
   }
   .member {
@@ -58,6 +58,13 @@ const props = defineProps({
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+    }
+
+    &-title {
+      .heading-3 {
+        letter-spacing: 0;
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
       }
     }
   }

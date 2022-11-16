@@ -206,6 +206,13 @@
         position: 'Advisor',
         copy: 'Amin is a serial entrepreneur and technologist. He has founded several startups in the United States and around the globe. He is fluent in English and German and has proven that he is always thinking outside the box. He holds several patents in technologies from databases to messaging.',
         linkedin: 'https://www.linkedin.com/in/amin-el-gazzar-7299b2100/'
+      },
+      {
+        name: 'Sebastian Galleitner',
+        image: 'sebastian.jpg',
+        position: 'Design & Developement',
+        copy: 'Sebastian has over 20 years experience in designing and developing websites of each size. He worked at various companies, agencies and startups across functions like growth marketing, UX design, frontend development and project management. He’s passionate about using his breadth of knowledge and experience to develop beautiful and effective websites and applications',
+        linkedin: 'https://www.linkedin.com/in/sebastian-galleitner-43780b8a/'
       }
     ]
   }
