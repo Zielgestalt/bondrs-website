@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!pending && !verror" class="strategy">
+  <div v-if="!pending && !error" class="strategy">
     <div class="strategy-icon"><SvgOwl /></div>
     <div class="strategy-description text-flow">
       <h3 class="heading-3 is-uppercase">Current Strategy</h3>
