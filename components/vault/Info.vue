@@ -1,5 +1,5 @@
 <template>
-  <div class="vault text-flow is-flow-8" :class="props.vaultType">
+  <div v-if="!pending && !vaultError" class="vault text-flow is-flow-8" :class="props.vaultType">
     <!-- <SvgBull v-if="props.vaultType === 'bull'" class="vault-icon no-flow" />
     <SvgBear v-else-if="props.vaultType === 'bear'" class="vault-icon no-flow" />
     <SvgOwl v-else-if="props.vaultType === 'owl'" class="vault-icon no-flow" /> -->
@@ -50,83 +50,92 @@ const props = defineProps({
   readmore: { type: Object, default: {} },
 })
 
-const { data: vaultData, pending } = await useLazyFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`, { key: props.vaultAddress })
-// const { data: vaultTVL, pending: pendingTVL } = await useFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}&timestamp=21-10-2022 00:00:00&is_Date=true`)
-const { data: vaultTVL, pending: pendingTVL } = await useLazyFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}`, { key: props.vaultAddress + 'tvl' })
-const { data: vaultAPR, pending: pendingAPR } = await useLazyFetch(`https://live.yieldster.finance/Vault/sdk/v2.0/yieldster/apr?vaultAddress=${props.vaultAddress}&currentBlockNumber=`, { key: props.vaultAddress + 'apr' })
+const vaultError = ref(false)
 
-const apyInception = computed(() => {
-  if (pending.value) {
-    return 0
-  } else {
-    return vaultAPR.value.data.sinceInceptionAPY.toFixed(2)
-  }
-})
+const { data: vaultData, pending, error } = await useLazyFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`, { key: props.vaultAddress })
 
-const apyLastEpoch = computed(() => {
-  if (pending.value) {
-    return 0
-  } else {
-    return vaultAPR.value.data.oneMonthApy.toFixed(2)
-  }
-})
+if (error) {
+  vaultError.value = true
+} else {
+  // const { data: vaultTVL, pending: pendingTVL } = await useFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}&timestamp=21-10-2022 00:00:00&is_Date=true`)
+  const { data: vaultTVL, pending: pendingTVL } = await useLazyFetch(`https://live.yieldster.finance/smart-contract/sdk/v2.0/yieldster/vaultNAV?vault%20address=${props.vaultAddress}`, { key: props.vaultAddress + 'tvl' })
+  const { data: vaultAPR, pending: pendingAPR } = await useLazyFetch(`https://live.yieldster.finance/Vault/sdk/v2.0/yieldster/apr?vaultAddress=${props.vaultAddress}&currentBlockNumber=`, { key: props.vaultAddress + 'apr' })
 
-const apyEstimated = computed(() => {
-  return 6.11
-})
+  const apyInception = computed(() => {
+    if (pending.value) {
+      return 0
+    } else {
+      return vaultAPR.value.data.sinceInceptionAPY.toFixed(2)
+    }
+  })
 
-const tvl = computed(() => {
-  if (pending.value) {
-    return 0
-  } else {
-    return (vaultTVL.value.data.VaultNAV / 1000000000000000000).toFixed(2)
-  }
-})
+  const apyLastEpoch = computed(() => {
+    if (pending.value) {
+      return 0
+    } else {
+      return vaultAPR.value.data.oneMonthApy.toFixed(2)
+    }
+  })
 
-const info = computed(() => {
-  if (props.vaultType === 'bull') {
-    return [
-      {
-        label: 'Estimated APY',
-        description: 'Lorem ipsum dolor sit amet',
-        value: apyEstimated.value + ' %'
-      },
-      {
-        label: 'APY last Bondr',
-        description: 'Lorem ipsum dolor sit amet',
-        value: apyLastEpoch.value + ' %'
-      },
-      {
-        label: 'Current TVL',
-        description: 'Lorem ipsum dolor sit amet',
-        value: parseFloat(tvl.value).toLocaleString('en')
-      }
-    ]
-  } else if (props.vaultType === 'bear') {
-    return [
-      {
-        label: 'Maximum APY',
-        description: 'Lorem ipsum dolor sit amet',
-        value: '6 %'
-      },
-      {
-        label: 'Minimum APY',
-        description: 'Lorem ipsum dolor sit amet',
-        value: '4 %'
-      },
-      {
-        label: 'Current APY',
-        description: 'Lorem ipsum dolor sit amet',
-        value: '5.86 %'
-      },
-      {
-        label: 'Current TVL',
-        description: 'Lorem ipsum dolor sit amet',
-        value: parseFloat(tvl.value).toLocaleString('en')
-      }
-    ]
-  }
-})
+  const apyEstimated = computed(() => {
+    return 6.11
+  })
+
+  const tvl = computed(() => {
+    if (pending.value) {
+      return 0
+    } else {
+      return (vaultTVL.value.data.VaultNAV / 1000000000000000000).toFixed(2)
+    }
+  })
+
+  const info = computed(() => {
+    if (props.vaultType === 'bull') {
+      return [
+        {
+          label: 'Estimated APY',
+          description: 'Lorem ipsum dolor sit amet',
+          value: apyEstimated.value + ' %'
+        },
+        {
+          label: 'APY last Bondr',
+          description: 'Lorem ipsum dolor sit amet',
+          value: apyLastEpoch.value + ' %'
+        },
+        {
+          label: 'Current TVL',
+          description: 'Lorem ipsum dolor sit amet',
+          value: parseFloat(tvl.value).toLocaleString('en')
+        }
+      ]
+    } else if (props.vaultType === 'bear') {
+      return [
+        {
+          label: 'Maximum APY',
+          description: 'Lorem ipsum dolor sit amet',
+          value: '6 %'
+        },
+        {
+          label: 'Minimum APY',
+          description: 'Lorem ipsum dolor sit amet',
+          value: '4 %'
+        },
+        {
+          label: 'Current APY',
+          description: 'Lorem ipsum dolor sit amet',
+          value: '5.86 %'
+        },
+        {
+          label: 'Current TVL',
+          description: 'Lorem ipsum dolor sit amet',
+          value: parseFloat(tvl.value).toLocaleString('en')
+        }
+      ]
+    }
+  })
+}
+
+
 
 </script>
 

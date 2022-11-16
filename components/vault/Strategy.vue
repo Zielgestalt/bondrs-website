@@ -1,5 +1,5 @@
 <template>
-  <div class="strategy">
+  <div v-if="!pending && !verror" class="strategy">
     <div class="strategy-icon"><SvgOwl /></div>
     <div class="strategy-description text-flow">
       <h3 class="heading-3 is-uppercase">Current Strategy</h3>
@@ -16,8 +16,13 @@ const props = defineProps({
   readmore: { type: Object, default: {} },
 })
 
-const { data: vaultData, pending } = await useFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`)
+const vaultError = ref(false)
 
+const { data: vaultData, pending, error } = await useFetch(`https://live.yieldster.finance/Vault/v2.0/yieldster/vault-details/${props.vaultAddress}`)
+
+if (error) {
+  vaultError.value = true
+}
 </script>
 
 <style lang="scss" scoped>
